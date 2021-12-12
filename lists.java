@@ -34,12 +34,13 @@ public class Main {
         if (scanner.hasNextInt()) {
             int smoother = scanner.nextInt();
             int sum = 0;
-            if (smoother > 0 & smoother < listOfDigits.length) { //checking if the entered K meets our requirements
+            if (smoother > 0 & smoother < listOfDigits.length + 1) { //checking if the entered K meets our requirements
                 for (int j = 0; j < smoother; j++) {  //calculating the average of K first numbers in the list
                     sum = sum + listOfDigits[j];
                 }
             } else {
                 System.out.println("Invalid data. K must be among naturals and less than the length of the list");
+                return;
             }
             int result;
             result = sum / smoother;
@@ -56,6 +57,7 @@ public class Main {
         }
         else {
             System.out.println("Invalid data. K must be among naturals");
+            return;
         }
         scanner.close();
     }
